@@ -57,7 +57,7 @@
   <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
   <meta name="citation_publication_date" content="2024">
   <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  <meta name="citation_pdf_url" content="static/v1.pdf">
   
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
@@ -139,7 +139,7 @@
     "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
     "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
     "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "PaperExplainAgent is an interactive reading assistant for STEM textbooks, lecture notes, and research papers. Load a PDF, highlight a definition, theorem, figure, or paragraph, and ask questions in plain language. The system responds with layered explanations—starting from high-level intuition and concrete examples, then moving into more technical detail as needed—while always staying grounded in the original passage you selected. PaperExplainAgent is designed to make dense material in mathematics, computer science, physics, engineering, and related fields easier to digest. It can unpack symbols and notation, clarify assumptions, compare similar concepts, and outline the structure of an argument or derivation step by step. As the project develops, we plan to add richer workflows such as saving explanation “threads,” generating study notes, and integrating with common reference managers and note-taking tools.",
+    "abstract": "PaperExplainAgent turns dense STEM PDFs into short explainer videos. Paste your LLM API key, upload a paper, and click Generate. Behind the scenes, the system converts the PDF into structured text, plans a multi-scene explanation, generates Manim animation code with narration, and renders a final MP4. The demo UI shows live status updates and displays the output preview when the job finishes.",
     "citation": "BIBTEX_CITATION_HERE",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -208,7 +208,7 @@
                          <!-- TODO: Update with your arXiv paper ID -->
                     <!-- TODO: Add your supplementary material PDF or remove this section -->
                     <span class="link-block">
-                      <a href="static/paper.pdf" target="_blank"
+                      <a href="static/v1.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -235,6 +235,16 @@
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                  </a>
+                </span>
+
+                  <span class="link-block">
+                    <a href="video.html" target="_blank" rel="noopener"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-video"></i>
+                    </span>
+                    <span>Video</span>
                   </a>
                 </span>
 
@@ -272,9 +282,6 @@
           </div>
           <a class="preview-pane__frame" href="https://math-495-final-a5d936bb1f71.herokuapp.com/#" target="_blank" rel="noopener" aria-label="Open the PaperExplainAgent demo">
             <iframe src="https://math-495-final-a5d936bb1f71.herokuapp.com/#" loading="lazy" title="PaperExplainAgent live preview"></iframe>
-            <div class="preview-pane__frame-overlay">
-              <span class="preview-pane__frame-text">Click to open the full experience</span>
-            </div>
           </a>
         </div>
       </div>
@@ -309,15 +316,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
-          <p>PaperExplainAgent is an interactive reading assistant designed to help researchers and students make sense of dense STEM papers. Given a PDF, the system responds with simple
-visual or animation-style sketches that could be rendered with tools like Manim. To build
-this behavior, we build on open-source LLMs with prompting and integration strategies tailored to dense mathematical texts. Our design is motivated by work in cognitive science and
-math education showing that well-aligned diagrams and dynamic visualizations can reduce
-cognitive load and improve conceptual understanding, especially for symbol-heavy material.
-Research suggests that structured, visually grounded responses are preferred to generic textonly explanations and are perceived as clearer and more helpful for understanding unfamiliar
-results. We conclude by discussing limitations of our current prototype and outlining how
-tighter integration between interactive reading tools and visualization backends could further
-support mathematical and STEM researc.</p>
+          <p>PaperExplainAgent turns dense STEM PDFs into short explainer videos. Paste your LLM API key, upload a paper, and click Generate. Behind the scenes, the system converts the PDF into structured text, plans a multi-scene explanation, generates Manim animation code with narration, and renders a final MP4. The demo UI shows live status updates and displays the output preview when the job finishes.</p>
         </div>
       </div>
     </div>
@@ -333,69 +332,51 @@ support mathematical and STEM researc.</p>
 
 
 <!-- Comments & Feedback -->
-<section class="section hero is-light" id="comments">
+<section class="section" id="comments">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-10">
-        <div class="box comment-box">
+        <div class="comment-box">
           <div class="comment-box__header">
             <div>
-              <h3 class="title is-4">Comments &amp; Feedback</h3>
-              <p class="subtitle is-6 has-text-grey">Share your thoughts publicly or send us a private note.</p>
+              <h3 class="title is-4 mb-1">Comments &amp; Feedback</h3>
+              <p class="is-size-6 has-text-grey">Share a quick note or drop us an email.</p>
             </div>
           </div>
-          <form id="commentForm" data-mail-to="mihirballari@gmail.com,sunghoojungg@gmail.com">
-            <div class="columns is-multiline">
+          <form id="commentForm" class="comment-form" data-mail-to="mihirballari@gmail.com,sunghoojungg@gmail.com">
+            <div class="columns is-multiline is-variable is-4">
               <div class="column is-half">
-                <div class="field">
-                  <label class="label">Name</label>
-                  <div class="control">
-                    <input class="input" type="text" name="name" placeholder="Optional">
-                  </div>
-                </div>
+                <label class="label is-size-7 has-text-grey-dark">Name <span class="has-text-grey">(optional)</span></label>
+                <input class="input" type="text" name="name" placeholder="Your name">
               </div>
               <div class="column is-half">
-                <div class="field">
-                  <label class="label">Email</label>
-                  <div class="control">
-                    <input class="input" type="email" name="email" placeholder="Optional">
-                  </div>
-                </div>
+                <label class="label is-size-7 has-text-grey-dark">Email <span class="has-text-grey">(optional)</span></label>
+                <input class="input" type="email" name="email" placeholder="you@example.com">
               </div>
               <div class="column is-full">
-                <div class="field">
-                  <label class="label">Comment</label>
-                  <div class="control">
-                    <textarea class="textarea" name="comment" rows="3" placeholder="What would you like to share?"></textarea>
-                  </div>
-                </div>
+                <label class="label is-size-7 has-text-grey-dark">Comment</label>
+                <textarea class="textarea" name="comment" rows="3" placeholder="What would you like to share?"></textarea>
               </div>
               <div class="column is-full">
-                <div class="field">
-                  <label class="label">Share as</label>
+                <div class="field is-grouped is-align-items-center is-justify-content-space-between">
                   <div class="control">
                     <label class="radio mr-4">
                       <input type="radio" name="commentMode" value="public" checked>
-                      Public comment (appears below)
+                      Public
                     </label>
                     <label class="radio">
                       <input type="radio" name="commentMode" value="email">
-                      Send privately via email
+                      Email us
                     </label>
+                    <p class="help mt-1">Email opens your mail app with a pre-filled message.</p>
                   </div>
-                  <p class="help">Email option opens your mail app with a pre-filled message.</p>
-                </div>
-              </div>
-              <div class="column is-full">
-                <div class="field is-grouped is-align-items-center">
                   <div class="control">
-                    <button class="button is-dark" type="submit">
-                      <span class="icon"><i class="fas fa-paper-plane"></i></span>
-                      <span>Share feedback</span>
+                    <button class="button is-dark is-light" type="submit">
+                      <span>Send</span>
                     </button>
                   </div>
-                  <p id="commentStatus" class="help is-hidden"></p>
                 </div>
+                <p id="commentStatus" class="help is-hidden mt-2"></p>
               </div>
             </div>
           </form>
