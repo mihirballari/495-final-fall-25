@@ -1,4 +1,4 @@
-# PaperExplainAgent
+# [PaperExplainAgent](https://mihirballari.github.io/PaperExplainAgent/)
 
 PaperExplainAgent is a PDF-to-video explainer pipeline for STEM papers. You upload a PDF and provide an LLM API key, and the system generates a short narrated explainer video by planning scenes, generating Manim code, and rendering an MP4.
 
