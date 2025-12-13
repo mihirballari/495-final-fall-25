@@ -294,15 +294,20 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-              Example Video Using PaperExplainAgent
-      </h2>
+      <div class="example-io">
+        <div class="example-output-card">
+          <video poster="" id="tree" autoplay controls muted loop preload="metadata" playsinline>
+            <source src="deepseekdemo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="example-input-card">
+          <div class="pdf-preview" aria-label="Example PDF preview">
+            <iframe src="deepseekinput.pdf#page=1&view=Fit&toolbar=0&navpanes=0&scrollbar=0" title="DeepSeek input PDF preview" loading="lazy"></iframe>
+          </div>
+          <a class="is-size-7 has-text-weight-semibold" href="deepseekinput.pdf" target="_blank" rel="noopener">Open full PDF</a>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">Example explainer video (output) and source PDF (input)</h2>
     </div>
   </div>
 </section>
